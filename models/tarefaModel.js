@@ -5,6 +5,5 @@ class Tarefa {
     this.description = description; 
     } 
 }
-
 module.exports = Tarefa;
     

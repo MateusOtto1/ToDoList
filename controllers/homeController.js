@@ -1,4 +1,9 @@
 function getView(req, res) { 
-    res.render('home'); 
+    res.render('home', null);
 }
-module.exports = { getView };
+
+function btnEntrar(req, res) { 
+    res.redirect('/tarefas'); 
+}
+
+module.exports = { getView, btnEntrar };
