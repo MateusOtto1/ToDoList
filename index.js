@@ -12,6 +12,18 @@ app.use(express.static('public'));
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
 
+app.use((req, res, next) =>{
+    if(req.session.user){
+        next();
+    }else{
+        if(req.originalUrl == '/login' || req.originalUrl == '/autenticar'){
+            next();       
+        }else{
+            res.redirect("/login");
+        } 
+    }
+});
+
 app.get('/', (req, res) =>{
     app.set('layout', './layouts/default/index');
     homeController.getView(req, res);
