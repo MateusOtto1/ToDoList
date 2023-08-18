@@ -3,7 +3,7 @@ function getView(req, res) {
 }
 
 function btnEntrar(req, res) { 
-    res.redirect('/tarefas'); 
+    res.redirect('/login'); 
 }
 
 module.exports = { getView, btnEntrar };
